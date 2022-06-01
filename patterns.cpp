@@ -364,9 +364,11 @@ using namespace std;
 //     }
 //     for(int i=n;i>=1;i--){
 //         for(int j=1;j<=(n-i);j++){
+       //here n=5 and i is also 5 so the looping condition becomes false as j=1 and j<=0 is not correct so the space will be not added in the first iteration
 //             cout<<" ";
 //         }
 //         for(int j=1;j<=(2*i-1);j++){
+
 //                 cout<<"*";
 //         }
         //  cout<<endl;
