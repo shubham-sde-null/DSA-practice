@@ -1,26 +1,100 @@
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"enter the size of array:"<<endl;
+//     cin>>n;
+//     int array[n];
+//     for(int i=0;i<n;i++){
+// cin>>array[i];
+//     }
+//     int counter=1;
+//     while(counter<n){
+// for(int i=0;i<n-counter;i++){
+//     if(array[i]>array[i+1]){
+//         int temp=array[i];
+//         array[i]=array[i+1];
+//         array[i+1]=temp;
+//     }
+// }
+// counter++;
+//     }
+//     for(int i=0;i<n;i++){
+//         cout<<array[i]<<" ";
+//     }
+//     return 0;
+// }
+// #include<iostream>
+// using namespace std;
+// int main(){
+//     int n;
+//     cout<<"enter the number of elements in array:";
+//     cin>>n;
+//     int arr[n];
+//     for(int i=0;i<n;i++){
+//         cin>>arr[i];
+//     }
+//     cout<<"the elements of array is:"<<endl;
+//       for(int i=0;i<n;i++){
+//         cout<<arr[i]<<endl;
+//     }
+//     for(int i=1;i<n;i++){
+//         //we can also write i=0;i<n-1;i++,it's also correct
+//         //for round 1 to n-1, because we know that in selection sort  runs for n-1 times to get the correct result
+//         for(int j=0;j<n-i;j++){
+//             //what we are doing over here is we are comparing the element with the next one, to achieve that we have to run the j till the second last element then only when we reached at the second last elememt we can compare with the last element, and after every round is passed the value of j is decreasing so we used j=n-i
+//             if(arr[j]>arr[j+1]){
+//                 int temp=arr[j+1];
+//                 arr[j+1]=arr[j];
+//                 arr[j]=temp;
+//             }
+//         }
+//     }
+//     cout<<"the elements of array after sorting is:"<<endl;
+// for(int i=0;i<n;i++){
+//         cout<<arr[i]<<endl;
+//     }
+// return 0;
+// }
+
+//Optimizing the bubble sort
 #include<iostream>
 using namespace std;
 int main(){
     int n;
-    cout<<"enter the size of array:"<<endl;
+    cout<<"enter the number of elements in array:";
     cin>>n;
-    int array[n];
+    int arr[n];
     for(int i=0;i<n;i++){
-cin>>array[i];
+        cin>>arr[i];
     }
-    int counter=1;
-    while(counter<n){
-for(int i=0;i<n-counter;i++){
-    if(array[i]>array[i+1]){
-        int temp=array[i];
-        array[i]=array[i+1];
-        array[i+1]=temp;
+    cout<<"the elements of array is:"<<endl;
+      for(int i=0;i<n;i++){
+        cout<<arr[i]<<endl;
     }
-}
-counter++;
+    for(int i=1;i<n;i++){
+        bool swapped=false;
+        //here we are optimizing our bubble sorting to avoid running extra rounds if our array got sorted
+        //we can also write i=0;i<n-1;i++,it's also correct
+        //for round 1 to n-1, because we know that in selection sort  runs for n-1 times to get the correct result
+        for(int j=0;j<n-i;j++){
+            //what we are doing over here is we are comparing the element with the next one, to achieve that we have to run the j till the second last element then only when we reached at the second last elememt we can compare with the last element, and after every round is passed the value of j is decreasing so we used j=n-i
+            if(arr[j]>arr[j+1]){
+                int temp=arr[j+1];
+                arr[j+1]=arr[j];
+                arr[j]=temp;
+                swapped=true;
+                //if swapping is done then update the value of swapped to true , otherwise swapped value will remain false
+            }
+        }
+        if(swapped==false){
+            //here if we got swapped value as false that's means no sorting is done, it means our array is sorted
+            break;
+        }
     }
-    for(int i=0;i<n;i++){
-        cout<<array[i]<<" ";
+    cout<<"the elements of array after sorting is:"<<endl;
+for(int i=0;i<n;i++){
+        cout<<arr[i]<<endl;
     }
-    return 0;
+return 0;
 }
