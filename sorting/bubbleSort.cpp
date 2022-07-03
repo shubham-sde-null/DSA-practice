@@ -65,6 +65,8 @@ int main(){
     cout<<"enter the number of elements in array:";
     cin>>n;
     int arr[n];
+    int counter=0;
+    //just counting the number of swaps took place
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
@@ -85,6 +87,8 @@ int main(){
                 arr[j]=temp;
                 swapped=true;
                 //if swapping is done then update the value of swapped to true , otherwise swapped value will remain false
+                 counter++;
+                 //incremenating the counter for the number of swaps.
             }
         }
         if(swapped==false){
@@ -96,5 +100,6 @@ int main(){
 for(int i=0;i<n;i++){
         cout<<arr[i]<<endl;
     }
+    cout<<"the total number of swaps are:"<<counter;
 return 0;
 }
