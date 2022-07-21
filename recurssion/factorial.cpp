@@ -11,10 +11,10 @@ int factorial(int n){
     // write this three lines or the below one line both will run fine, this function will keep on calling untill base condition is reached
 
 
-      // return n*factorial((n-1));
+      return n*factorial((n-1));
 }
 int main(){
-    int n=5;
+    int n=6;
     int ans=0;
     ans=factorial(n);
     cout<<ans;
