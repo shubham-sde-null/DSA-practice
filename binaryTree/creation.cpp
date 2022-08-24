@@ -60,12 +60,79 @@ class node{
         }
 
     }
+    //inorder, preorder, and postorder traversal
+    void inOrder(node* root){
+        //base case
+        if(root==NULL){
+           return;
+        }
+        inOrder(root->left);
+        cout<<root->data<<" ";
+        inOrder(root->right);
+    }
+    void preOrder(node* root){
+        //base case
+        if(root==NULL){
+           return;
+        }
+        cout<<root->data<<" ";
+        preOrder(root->left);
+        preOrder(root->right);
+    }
+    void postOrder(node* root){
+        //base case
+        if(root==NULL){
+           return;
+        }
+        postOrder(root->left);
+        postOrder(root->right);
+        cout<<root->data<<" ";
+
+    }
+    //here I want to change my original node so I am passing the refrence
+    void buildFromLevelOrder(node* &root){
+        //here we will not put any seperator
+        queue<node*> q;
+        cout<<"enter data for root"<<endl;
+        int data;
+        cin>>data;
+        root=new node(data);
+        q.push(root);
+        while(!q.empty()){
+            node* temp=q.front();
+            q.pop();
+            cout<<"enter left node for:"<<temp->data<<endl;
+            int leftData;
+            cin>>leftData;
+            //we know that if user entered -1 which equals to null in that case I am not going to insert it in my leftnode
+            if(leftData!=-1){
+                temp->left=new node(leftData);
+                q.push(temp->left);
+            }
+            cout<<"enter right node for:"<<temp->data<<endl;
+            int rightData;
+            cin>>rightData;
+            //we know that if user entered -1 which equals to null in that case I am not going to insert it in my leftnode
+            if(rightData!=-1){
+                temp->right=new node(rightData);
+                q.push(temp->right);
+            }
+        }
+    }
 int main(){
     // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
     node *root=NULL;
-    root=buildTree(root);
-    cout<<"printing the level order traversal:"<<endl;
-    levelOrderTraversal(root);
-
-return 0;
+    // root=buildTree(root);
+    // cout<<"printing the level order traversal:"<<endl;
+    // levelOrderTraversal(root);
+    // cout<<"inorder traversal is:";
+    // inOrder(root);
+    // cout<<endl;
+    // cout<<"preorder traversal is:";
+    // preOrder(root);
+    // cout<<endl;
+    // cout<<"postorder traversal is:";
+    // postOrder(root);
+    buildFromLevelOrder(root);
+    return 0;
 }
