@@ -15,20 +15,12 @@ int main(){
         }
         int diff=abs(array[j]-array[j+1]);
         temp[i]=diff;
-        // cout<<diff<<endl;
          }
 
     }
-    // for(int i=0;i<6;i++){
-    //     cout<<temp[i]<<endl;
-    // }
-    // cout<<"one done"<<endl;
     for(int i=0;i<6;i++){
         store[temp[i]]=++store[temp[i]];
     }
-    // for(int i=0;i<6;i++){
-    //     cout<<store[i]<<endl;
-    // }
     for(int i=0;i<6;i++){
         if(store[i]>maxLoc){
             maxLoc=i;

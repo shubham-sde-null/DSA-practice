@@ -4,10 +4,9 @@ using namespace std;
 int binarySearch(int arr[],int start, int end, int key){
     int s=start;
     int e=end;
-
     while (s<=e)
     {
-         int mid=(s+e)/2;
+    int mid=(s+e)/2;
     if(arr[mid]==key){
         return mid;
     }
