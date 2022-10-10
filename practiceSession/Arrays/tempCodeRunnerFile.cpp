@@ -1,8 +1,9 @@
-   // for(int i=0;i<temp.size();i++){
-    //     if(i==1){
-    //         while(last==1){
-    //             last--;
-    //         }
-    //         swap(nums[i],nums[last]);
+ // for(int j=i;j<8;i++){
+    //     if(array[j]!=val){
+    //         swap(array[i],array[j]);
+    //         i++;
     //     }
+    // }
+    // for(int i=0;i<8;i++){
+    //     cout<<array[i]<<endl;
     // }

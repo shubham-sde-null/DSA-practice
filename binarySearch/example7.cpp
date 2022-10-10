@@ -3,7 +3,7 @@
 using namespace std;
 bool isPossibleSolution(int arr[],int n,int m, int mid){
 int studentCount=1;
-// initially we aree making our solution for the 1st student, and gradully based on the condition we are goin to increase the number of students.
+// initially we are making our solution for the 1st student, and gradully based on the condition we are going to increase the number of students.
 int pageSum=0;
 //in each element we have the the number of pages in the book, so initially we are making the variable which will store the number of pages and make the partition
 for(int i=0;i<=n;i++){
@@ -15,7 +15,7 @@ for(int i=0;i<=n;i++){
         studentCount++;
         // if we can't do the further alocation in student one , then we have to go to the second student
         if(studentCount>m || arr[i]>mid){
-            // here also there are some conditions to allocate books to the other student, first is the number of students must be smaller then the give number of students and the other is the number of pages present inside the array element must be smaller then the mis, otherwise what will happen is condition will never become true and we can't provide book to other students
+            // here also there are some conditions to allocate books to the other student, first is the number of students must be smaller then the give number of students and the other is the number of pages present inside the array element must be smaller then the mid, otherwise what will happen is condition will never become true and we can't provide book to other students
             return false;
         }
         pageSum=arr[i];
