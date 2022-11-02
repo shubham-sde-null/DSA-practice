@@ -5,7 +5,7 @@ char maxOccCharcter(string s){
     //we are making this array to store all the occurence of characters in our string
     for(int i=0;i<s.length();i++){
         char ch=s[i];
-        //here we are traversing the string, ans in ch we will get particular character, for example we get 'b'
+        //here we are traversing the string, and in ch we will get particular character, for example we get 'b'
         int number=0;
         //we are using this number to store the result bewteen the chatcter and 'a', like number=ch-'a', number='b'-'a', number=1, now the 1 will point to the 1st position in arr
         number=ch-'a';
