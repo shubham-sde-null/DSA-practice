@@ -9,7 +9,8 @@ char maxOccCharcter(string s){
         int number=0;
         //we are using this number to store the result bewteen the chatcter and 'a', like number=ch-'a', number='b'-'a', number=1, now the 1 will point to the 1st position in arr
         number=ch-'a';
-        arr[number]++;
+        // arr[number]++;
+        arr[number]=arr[number]+1;
         // whatever the position we get at that point whatever is present that will get incremented
     }
     int maxi=-1;
