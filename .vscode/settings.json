@@ -1,10 +1,12 @@
 {
   "files.associations": {
+    "*.js": "javascriptreact",
     "type_traits": "cpp",
     "iostream": "cpp",
     "ostream": "cpp",
     "array": "cpp",
     "numeric": "cpp",
-    "*.tcc": "cpp"
+    "*.tcc": "cpp",
+    "random": "cpp"
   }
 }
