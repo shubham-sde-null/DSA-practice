@@ -1,20 +1,22 @@
 #include<iostream>
 using namespace std;
 bool sortedArray(int arr[],int size){
+    bool ans;
 if(size==0 || size==1){
     return true;
 }
 else if(arr[0]>arr[1]){
-return true;
+return false;
 }
 else {
-     return false;
-     }
-    sortedArray(arr+1,size-1);
+    ans=sortedArray(arr+1,size-1);
 
+     }
+
+ return ans;
 }
 int main(){
-    int arr[4]={1,2,3,4};
+    int arr[4]={1,1,1,1};
     bool ans=sortedArray(arr,4);
     if(ans){
         cout<<"array is soretd"<<endl;

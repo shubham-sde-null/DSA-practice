@@ -1,18 +1,20 @@
 #include<iostream>
 using namespace std;
-bool checkPallindrome(string &str,int i, int j){
-    if(i>j){
+bool checkPallindrome(string &str,int s, int e){
+      if(s>e){
         return false;
     }
-    if(str[i]!=str[j]){
-        return false;
-    }
-    if(str[i]==str[j]){
-        return true;
-    }
-    i++;
-    j--;
-    checkPallindrome(str,i,j);
+     if(s==e){
+    return true;
+   }
+   if(str[s]!=str[e]){
+    return false;
+   }
+
+    s++;
+    e--;
+    bool ans= checkPallindrome(str,s,e);
+   return ans;
 }
 int main(){
     string str="radar";

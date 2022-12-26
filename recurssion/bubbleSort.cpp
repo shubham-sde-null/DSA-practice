@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 void bubbleSort(int arr[],int n){
-    //we can alsn think as int arr[] to int *arr, and now when array is passed to this function it is passed as arr, which is nothing but the first address of array, so if this fucntion do any alteration to the array then it is going to perform on the same address as the array presnet in main function because of which we get the sorted array without passing the refrence 
+    //we can alsn think as int arr[] to int *arr, and now when array is passed to this function it is passed as arr, which is nothing but the first address of array, so if this fucntion do any alteration to the array then it is going to perform on the same address as the array presnet in main function because of which we get the sorted array without passing the refrence
     if(n==0 || n==1){
         return;
     }

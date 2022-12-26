@@ -10,7 +10,7 @@ int waysToClimbStairs(int n){
     return waysToClimbStairs(n-1)+waysToClimbStairs(n-2);
 }
 int main(){
-    int n=5;
+    int n=8;
     cout<<waysToClimbStairs(n);
 return 0;
 }
