@@ -13,7 +13,7 @@ for(int i=s+1;i<=e;i++){
 int pivotIndex=s+count;
 //we are placing the pivot element at it's correct position
 swap(arr[pivotIndex],arr[s]);
-//Now we will satisfy our conditon where we will pring all the elements smller then the pivot to left hand side and all the elements greater then pivot to right hand side
+//Now we will satisfy our conditon where we will bring all the elements smller then the pivot to left hand side and all the elements greater then pivot to right hand side
 int i=s;
 int j=e;
 while(i<pivotIndex && j>pivotIndex){
