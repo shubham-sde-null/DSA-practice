@@ -17,6 +17,7 @@ if(x== n-1 && y==n-1){
     ans.push_back(path);
     return;
 }
+//here I have reached the destination so now I will make my visited array's x,y position as 1.
 visited[x][y]=1;
 //4 choice  D/L/R/U
 
@@ -92,7 +93,7 @@ int main(){
     // }
     ans=findPath(m,4);
     for(int i=0;i<ans.size();i++){
-        cout<<ans[i];
+        cout<<ans[i]<<" ";
     }
     cout<<endl;
 

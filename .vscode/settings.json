@@ -7,6 +7,7 @@
     "array": "cpp",
     "numeric": "cpp",
     "*.tcc": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "new": "cpp"
   }
 }
