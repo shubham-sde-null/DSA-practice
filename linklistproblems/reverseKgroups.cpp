@@ -72,6 +72,7 @@ int main()
     // since head is changed so I can't use the old head otherwise I will not get the correct ans.
     Node *newHead = reverseKgroups(head, 2);
     print(newHead);
+    cout << "the new head data is :" << newHead->data;
     // cout << "the head of the reversed node is:" << reversedHead->data;
 
     return 0;

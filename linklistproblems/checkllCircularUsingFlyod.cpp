@@ -1,7 +1,7 @@
-// using the map to solve the question which will take o(n) space complexity, after this problem I am going to solve the same problem using the flyod's cycle detection algo
+// using the floyd cycle to check the loop in the link list
 #include <iostream>
 using namespace std;
-#include <map>
+
 class Node
 {
 public:
@@ -13,22 +13,25 @@ public:
         this->next = NULL;
     }
 };
-// check whether there is loop present in the link list
-void checkLoop(Node *&head)
+void checkLoopUsingFloyd(Node *&head)
 {
-    map<Node *, bool> visited;
-    Node *temp = head;
-    while (temp != NULL)
+    Node *slow = head;
+    Node *fast = head;
+    while (slow != NULL && fast != NULL)
     {
-        if (visited[temp] == true)
+        fast = fast->next;
+        if (fast != NULL)
         {
-            cout << "the loop is present" << endl;
+            fast = fast->next;
+        }
+        slow = slow->next;
+        if (slow == fast)
+        {
+            cout << "loop is present" << endl;
             return;
         }
-        visited[temp] = true;
-        temp = temp->next;
     }
-    cout << "the loop is not present" << endl;
+    cout << "loop is not present" << endl;
 }
 // here i am making the infinite loop in the link list
 void makeLoopInfinite(Node *&head, int position)
@@ -83,8 +86,8 @@ int main()
     insertAtPosition(head, 40, 4);
     insertAtPosition(head, 50, 5);
     insertAtPosition(head, 60, 6);
-    makeLoopInfinite(head, 4);
-    checkLoop(head);
+    // makeLoopInfinite(head, 4);
+    checkLoopUsingFloyd(head);
     // print(head);
     cout << endl;
     // cout << "the last positon of the last node is:" << positionOfLastNode(head);

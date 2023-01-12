@@ -1,7 +1,7 @@
-// using the map to solve the question which will take o(n) space complexity, after this problem I am going to solve the same problem using the flyod's cycle detection algo
+// using the floyd cycle to check the loop in the link list
 #include <iostream>
 using namespace std;
-#include <map>
+
 class Node
 {
 public:
@@ -13,22 +13,29 @@ public:
         this->next = NULL;
     }
 };
-// check whether there is loop present in the link list
-void checkLoop(Node *&head)
+Node *checkLoopUsingFloyd(Node *&head)
 {
-    map<Node *, bool> visited;
-    Node *temp = head;
-    while (temp != NULL)
+    if (head == NULL)
     {
-        if (visited[temp] == true)
-        {
-            cout << "the loop is present" << endl;
-            return;
-        }
-        visited[temp] = true;
-        temp = temp->next;
+        return NULL;
     }
-    cout << "the loop is not present" << endl;
+    Node *slow = head;
+    Node *fast = head;
+    while (slow != NULL && fast != NULL)
+    {
+        fast = fast->next;
+        if (fast != NULL)
+        {
+            fast = fast->next;
+        }
+        slow = slow->next;
+        if (slow == fast)
+        {
+            // cout << "loop is present" << endl;//I have used this in case i am using the void function
+            return slow;
+        }
+    }
+    return NULL;
 }
 // here i am making the infinite loop in the link list
 void makeLoopInfinite(Node *&head, int position)
@@ -73,6 +80,36 @@ void print(Node *&head)
         current = current->next;
     }
 }
+Node *getTheNodeOfLoop(Node *&head)
+{
+    Node *intersection = checkLoopUsingFloyd(head);
+    if (intersection == NULL)
+    {
+        return NULL;
+    }
+    Node *slow = head;
+    while (slow != intersection)
+    {
+        slow = slow->next;
+        intersection = intersection->next;
+    }
+    return slow;
+}
+Node *removeTheLoop(Node *&head)
+{
+    if (head == NULL)
+    {
+        return NULL;
+    }
+    Node *startOfLoop = getTheNodeOfLoop(head);
+    Node *temp = startOfLoop;
+    while (temp->next != startOfLoop)
+    {
+        temp = temp->next;
+    }
+    temp->next = NULL;
+    return head;
+}
 int main()
 {
     Node *node1 = new Node(10);
@@ -84,9 +121,21 @@ int main()
     insertAtPosition(head, 50, 5);
     insertAtPosition(head, 60, 6);
     makeLoopInfinite(head, 4);
-    checkLoop(head);
+    Node *result = checkLoopUsingFloyd(head);
+    if (result == NULL)
+    {
+        cout << "the loop is not present" << endl;
+    }
+    else
+    {
+        cout << "the loop is present" << endl;
+    }
+    Node *nodeOfLoop = getTheNodeOfLoop(head);
+    cout << "the start of the loop is:" << nodeOfLoop->data << endl;
     // print(head);
-    cout << endl;
+    // cout << endl;
     // cout << "the last positon of the last node is:" << positionOfLastNode(head);
+    removeTheLoop(head);
+    print(head);
     return 0;
 }
