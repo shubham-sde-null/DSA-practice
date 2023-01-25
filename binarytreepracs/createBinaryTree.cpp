@@ -51,14 +51,45 @@ void levelOrderTraversel(Node *root)
         }
     }
 }
+void buildFromLevelOrderTraversal(Node *&root)
+{
+    queue<Node *> q;
+    int data;
+    cout << "enter the data for the root node" << endl;
+    cin >> data;
+    root = new Node(data);
+    q.push(root);
+    while (!q.empty())
+    {
+        Node *temp = q.front();
+        q.pop();
+        cout << "enter the left data for the" << temp->data << endl;
+        int leftData;
+        cin >> leftData;
+        if (leftData != -1)
+        {
+            temp->left = new Node(leftData);
+            q.push(temp->left);
+        }
+        cout << "enter the rigth data for the" << temp->data << endl;
+        int rightData;
+        cin >> rightData;
+        if (rightData != -1)
+        {
+            temp->right = new Node(rightData);
+            q.push(temp->right);
+        }
+    }
+}
 
 int main()
 {
     // Node *root = new Node(10);
     // cout << "the data of the root node is:" << root->data << endl;
     Node *root = NULL;
-    root = createBT(root);
-    levelOrderTraversel(root);
+    // root = createBT(root);
+    // levelOrderTraversel(root);
+    buildFromLevelOrderTraversal(root);
 
     return 0;
 }
