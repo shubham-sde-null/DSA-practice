@@ -37,27 +37,35 @@
 // return 0;
 // }
 
-#include<iostream>
+#include <iostream>
 using namespace std;
 #include <vector>
-void moveZeros(vector<int>& v){
-    //writing & is necessary,otherwise this function of no use
-    int i=0;
-    for(int j=0;j<v.size();j++){
-        if(v[j]!=0){
-            swap(v[j],v[i]);
+void moveZeros(vector<int> &v)
+{
+    // writing & is necessary,otherwise this function of no use
+    int i = 0;
+
+    for (int j = 0; j < v.size(); j++)
+    {
+        cout << "the value of i is:" << i << endl;
+        cout << "the value of j is:" << j << endl;
+        if (v[j] != 0)
+        {
+            swap(v[j], v[i]);
             i++;
         }
     }
-
 }
-void print(vector<int> ans){
-    cout<<"after moving zeros:"<<endl;
-    for(int i=0;i<ans.size();i++){
-        cout<<ans[i]<<endl;
+void print(vector<int> ans)
+{
+    cout << "after moving zeros:" << endl;
+    for (int i = 0; i < ans.size(); i++)
+    {
+        cout << ans[i] << " ";
     }
 }
-int main(){
+int main()
+{
     vector<int> v;
     // vector<int> ans(5,0);
     v.push_back(0);
@@ -68,12 +76,12 @@ int main(){
     v.push_back(2);
 
     moveZeros(v);
-cout<<"before moving zeros:"<<endl;
-    for(int i=0;i<5;i++){
-        cout<<v[i]<<endl;
+    cout << "before moving zeros:" << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        cout << v[i] << " ";
     }
     print(v);
 
-return 0;
+    return 0;
 }
-
