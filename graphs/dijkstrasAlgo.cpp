@@ -56,7 +56,8 @@ int main()
         auto top = *st.begin();
         int nodeDistance = top.first;
         int topNode = top.second;
-        st.erase(st.begin());
+        // st.erase(st.begin());
+        st.erase(top);
         for (auto neighbour : adj[topNode])
         {
             // what I used to do is that I add the distance of the current node plus the distance of node where I am going
