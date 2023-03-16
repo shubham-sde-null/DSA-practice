@@ -9,6 +9,11 @@
     "*.tcc": "cpp",
     "random": "cpp",
     "new": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "sstream": "cpp",
+    "regex": "cpp",
+    "cstdlib": "cpp"
   }
 }

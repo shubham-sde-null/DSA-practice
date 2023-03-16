@@ -1,0 +1,1 @@
+{"name":"Local: binarySearch","url":"c:\\Users\\91892\\Desktop\\DSAapnacollege\\relevel\\binarySearch.cpp","tests":[{"id":1678093768914,"input":"2\n6 3\n0 5 5 6 6 6\n8 2\n0 0 1 1 2 2 2 2","output":"0 \n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\91892\\Desktop\\DSAapnacollege\\relevel\\binarySearch.cpp","group":"local","local":true}

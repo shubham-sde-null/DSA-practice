@@ -44,7 +44,7 @@ int main()
         // the another reason of using the current over here is that when we change the value then we will be required old values to plaace at the correct position
         int current = array[i];
         int j = i - 1;
-        // we wrote this j ouside of loop because we want to use j to update position, but if we used j ouside it's loop then it does not have any scope and we will get the error.
+        // we wrote this j ouside of loop because we want to use j to update position, but if we used j inside   it's loop then it does not have any scope and we will get the error.
         for (; j >= 0; j--)
         {
             if (array[j] > current)

@@ -1,0 +1,1 @@
+{"name":"Local: bubblerelevel","url":"c:\\Users\\91892\\Desktop\\DSAapnacollege\\bubblerelevel.cpp","tests":[{"id":1676266606366,"input":"2\n5\n1 2 5 4 3\n5\n1 2 3 4 5","output":"2\n0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\91892\\Desktop\\DSAapnacollege\\bubblerelevel.cpp","group":"local","local":true}

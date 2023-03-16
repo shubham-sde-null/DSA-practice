@@ -35,13 +35,17 @@ bool isPossibleSolution(int arr[], int n, int m, int mid)
 }
 int allocateBooks()
 {
-    int arr[5] = {10, 20, 30, 40, 50};
+    // int arr[5] = {10, 20, 30, 40, 50};
+    // int s = 0;
+    int arr[7] = {15, 10, 19, 10, 5, 18, 7};
     int s = 0;
     // we can't give the 0 books to student, but top solve this problem we are suing the 0 as a refrence, which will not affect our final result.
     int sum = 0;
     // we are making the sum because we are using search space, suppose we don't know the values of array and user entered the values in array, it can be anything so we made a search space, thriugh which we will find the result.
-    int m = 2;
-    int n = 5;
+    // int m = 2;
+    // int n = 5;
+    int n = 7;
+    int m = 5;
     for (int i = 0; i < n; i++)
     {
         sum += arr[i];

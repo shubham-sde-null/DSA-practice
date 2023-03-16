@@ -1,0 +1,1 @@
+{"name":"Local: testcases","url":"c:\\Users\\91892\\Desktop\\DSAapnacollege\\setmultiset\\testcases.cpp","tests":[{"id":1676261685838,"input":"1\n5 3\n2 1 7 4 2","output":"14"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\91892\\Desktop\\DSAapnacollege\\setmultiset\\testcases.cpp","group":"local","local":true}

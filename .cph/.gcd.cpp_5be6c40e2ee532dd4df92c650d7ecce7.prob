@@ -1,0 +1,1 @@
+{"name":"Local: gcd","url":"c:\\Users\\91892\\Desktop\\DSAapnacollege\\gcd.cpp","tests":[{"id":1676265401647,"input":"1\n2 4 2","output":"YES"},{"id":1676265421315,"input":"1\n3 5 3","output":"NO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\91892\\Desktop\\DSAapnacollege\\gcd.cpp","group":"local","local":true}
